@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FunerariaModelStoreContainer" CdmEntityContainer="FunerariaEntities">
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="FunerariaModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="Sequencia_cid" ColumnName="Sequencia_cid" />
+          <ScalarProperty Name="Descricao_cid" ColumnName="Descricao_cid" />
+          <ScalarProperty Name="CodigoUf_unf" ColumnName="CodigoUf_unf" />
+          <ScalarProperty Name="CodigoIbge_ibg" ColumnName="CodigoIbge_ibg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conveniados">
+      <EntityTypeMapping TypeName="FunerariaModel.Conveniados">
+        <MappingFragment StoreEntitySet="Conveniados">
+          <ScalarProperty Name="Sequencia_con" ColumnName="Sequencia_con" />
+          <ScalarProperty Name="Descricao_con" ColumnName="Descricao_con" />
+          <ScalarProperty Name="Endereco_con" ColumnName="Endereco_con" />
+          <ScalarProperty Name="Numero_con" ColumnName="Numero_con" />
+          <ScalarProperty Name="Bairro_con" ColumnName="Bairro_con" />
+          <ScalarProperty Name="Sequencia_cid" ColumnName="Sequencia_cid" />
+          <ScalarProperty Name="DataNasc_con" ColumnName="DataNasc_con" />
+          <ScalarProperty Name="DataObto_con" ColumnName="DataObto_con" />
+          <ScalarProperty Name="Codigo_tco" ColumnName="Codigo_tco" />
+          <ScalarProperty Name="Ativo_con" ColumnName="Ativo_con" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dependentes">
+      <EntityTypeMapping TypeName="FunerariaModel.Dependentes">
+        <MappingFragment StoreEntitySet="Dependentes">
+          <ScalarProperty Name="Sequencia_dep" ColumnName="Sequencia_dep" />
+          <ScalarProperty Name="Sequencia_con" ColumnName="Sequencia_con" />
+          <ScalarProperty Name="Descricao_dep" ColumnName="Descricao_dep" />
+          <ScalarProperty Name="DataObto_dep" ColumnName="DataObto_dep" />
+          <ScalarProperty Name="DataNasc_dep" ColumnName="DataNasc_dep" />
+          <ScalarProperty Name="Codigo_par" ColumnName="Codigo_par" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Finaceiro">
+      <EntityTypeMapping TypeName="FunerariaModel.Finaceiro">
+        <MappingFragment StoreEntitySet="Finaceiro">
+          <ScalarProperty Name="Sequencia_fin" ColumnName="Sequencia_fin" />
+          <ScalarProperty Name="NumeroParcela_fin" ColumnName="NumeroParcela_fin" />
+          <ScalarProperty Name="Sequencia_con" ColumnName="Sequencia_con" />
+          <ScalarProperty Name="DataVencimento_fin" ColumnName="DataVencimento_fin" />
+          <ScalarProperty Name="DataPagamento_fin" ColumnName="DataPagamento_fin" />
+          <ScalarProperty Name="ValorDebito_fin" ColumnName="ValorDebito_fin" />
+          <ScalarProperty Name="ValorPago_fin" ColumnName="ValorPago_fin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistroObto">
+      <EntityTypeMapping TypeName="FunerariaModel.RegistroObto">
+        <MappingFragment StoreEntitySet="RegistroObto">
+          <ScalarProperty Name="Sequencia_obt" ColumnName="Sequencia_obt" />
+          <ScalarProperty Name="Sequencia_con" ColumnName="Sequencia_con" />
+          <ScalarProperty Name="DataObto_obt" ColumnName="DataObto_obt" />
+          <ScalarProperty Name="LocalObtio_obt" ColumnName="LocalObtio_obt" />
+          <ScalarProperty Name="Sequencia_cid" ColumnName="Sequencia_cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabEstado">
+      <EntityTypeMapping TypeName="FunerariaModel.TabEstado">
+        <MappingFragment StoreEntitySet="TabEstado">
+          <ScalarProperty Name="CodigoUf_unf" ColumnName="CodigoUf_unf" />
+          <ScalarProperty Name="DescricaoUf_unf" ColumnName="DescricaoUf_unf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabIbge">
+      <EntityTypeMapping TypeName="FunerariaModel.TabIbge">
+        <MappingFragment StoreEntitySet="TabIbge">
+          <ScalarProperty Name="CodigoIbge_ibg" ColumnName="CodigoIbge_ibg" />
+          <ScalarProperty Name="DescricaoIbge_ibg" ColumnName="DescricaoIbge_ibg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoContrato">
+      <EntityTypeMapping TypeName="FunerariaModel.TipoContrato">
+        <MappingFragment StoreEntitySet="TipoContrato">
+          <ScalarProperty Name="Codigo_tco" ColumnName="Codigo_tco" />
+          <ScalarProperty Name="Descricao_tco" ColumnName="Descricao_tco" />
+          <ScalarProperty Name="ValorContrato_tco" ColumnName="ValorContrato_tco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoParentesco">
+      <EntityTypeMapping TypeName="FunerariaModel.TipoParentesco">
+        <MappingFragment StoreEntitySet="TipoParentesco">
+          <ScalarProperty Name="Codigo_par" ColumnName="Codigo_par" />
+          <ScalarProperty Name="Descricao_par" ColumnName="Descricao_par" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

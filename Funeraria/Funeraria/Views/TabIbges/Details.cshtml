@@ -1,0 +1,26 @@
+﻿@model Funeraria.TabIbge
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TabIbge</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoIbge_ibg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoIbge_ibg)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CodigoIbge_ibg }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

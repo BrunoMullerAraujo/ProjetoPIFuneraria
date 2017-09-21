@@ -1,0 +1,50 @@
+﻿@model Funeraria.RegistroObto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RegistroObto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataObto_obt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataObto_obt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalObtio_obt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalObtio_obt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade.Descricao_cid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade.Descricao_cid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conveniados.Descricao_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conveniados.Descricao_con)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Sequencia_obt }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

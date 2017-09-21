@@ -1,0 +1,58 @@
+﻿@model Funeraria.Dependentes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dependentes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_dep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_dep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataObto_dep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataObto_dep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNasc_dep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNasc_dep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conveniados.Descricao_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conveniados.Descricao_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoParentesco.Descricao_par)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoParentesco.Descricao_par)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

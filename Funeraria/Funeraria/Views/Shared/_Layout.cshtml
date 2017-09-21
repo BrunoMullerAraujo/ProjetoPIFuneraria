@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Cidade", "Index", "Cidades")</li>
+                    <li>@Html.ActionLink("Estados", "Index", "TabEstadoes")</li>
+                    <li>@Html.ActionLink("Tabela Ibge", "Index", "TabIbges")</li>
+                    <li>@Html.ActionLink("Tipo Contrato", "Index", "TipoContratoes")</li>
+                    <li>@Html.ActionLink("Conveniados", "Index", "Conveniados")</li>
+                    <li>@Html.ActionLink("Tipo de Parentescos", "Index", "TipoParentescoes")</li>
+                    <li>@Html.ActionLink("Cadastro de Dependentes", "Index", "Dependentes")</li>
+                    <li>@Html.ActionLink("Registro de Obtos", "Index", "RegistroObtoes")</li>
+                    <li>@Html.ActionLink("Contas a Receber", "Index", "Finaceiroes")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

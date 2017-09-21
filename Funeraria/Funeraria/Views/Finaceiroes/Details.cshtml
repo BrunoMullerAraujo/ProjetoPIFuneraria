@@ -1,0 +1,58 @@
+﻿@model Funeraria.Finaceiro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Finaceiro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataVencimento_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataVencimento_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPagamento_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataPagamento_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorDebito_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorDebito_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorPago_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorPago_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conveniados.Descricao_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conveniados.Descricao_con)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

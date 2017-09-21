@@ -1,0 +1,26 @@
+﻿@model Funeraria.TipoParentesco
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TipoParentesco</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_par)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_par)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Codigo_par }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b3a494524204268905d1eddc5c3a5de" Name="Diagram1">
+        <EntityTypeShape EntityType="FunerariaModel.Cidade" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.Conveniados" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.Dependentes" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.Finaceiro" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.RegistroObto" Width="1.5" PointX="10.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.TabEstado" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.TabIbge" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.TipoContrato" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FunerariaModel.TipoParentesco" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="FunerariaModel.Cidade_Conveniados_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.Cidade_RegistroObto_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.TabEstado_Cidade_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.TabIbge_Cidade_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.Conveniados_Dependentes_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.Conveniados_Finaceiro_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.Conveniados_RegistroObto_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.TipoContrato_Conveniados_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="FunerariaModel.TipoParentesco_Dependentes_fk" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

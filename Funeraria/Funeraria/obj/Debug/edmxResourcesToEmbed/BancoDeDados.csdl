@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FunerariaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="Sequencia_cid" />
+    </Key>
+    <Property Name="Sequencia_cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao_cid" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CodigoUf_unf" Type="Int32" Nullable="false" />
+    <Property Name="CodigoIbge_ibg" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Conveniados" Relationship="Self.Cidade_Conveniados_fk" FromRole="Cidade" ToRole="Conveniados" />
+    <NavigationProperty Name="RegistroObto" Relationship="Self.Cidade_RegistroObto_fk" FromRole="Cidade" ToRole="RegistroObto" />
+    <NavigationProperty Name="TabEstado" Relationship="Self.TabEstado_Cidade_fk" FromRole="Cidade" ToRole="TabEstado" />
+    <NavigationProperty Name="TabIbge" Relationship="Self.TabIbge_Cidade_fk" FromRole="Cidade" ToRole="TabIbge" />
+  </EntityType>
+  <EntityType Name="Conveniados">
+    <Key>
+      <PropertyRef Name="Sequencia_con" />
+    </Key>
+    <Property Name="Sequencia_con" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao_con" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Endereco_con" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Numero_con" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Bairro_con" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sequencia_cid" Type="Int32" Nullable="false" />
+    <Property Name="DataNasc_con" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataObto_con" Type="DateTime" Precision="3" />
+    <Property Name="Codigo_tco" Type="Int32" Nullable="false" />
+    <Property Name="Ativo_con" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="Self.Cidade_Conveniados_fk" FromRole="Conveniados" ToRole="Cidade" />
+    <NavigationProperty Name="Dependentes" Relationship="Self.Conveniados_Dependentes_fk" FromRole="Conveniados" ToRole="Dependentes" />
+    <NavigationProperty Name="Finaceiro" Relationship="Self.Conveniados_Finaceiro_fk" FromRole="Conveniados" ToRole="Finaceiro" />
+    <NavigationProperty Name="RegistroObto" Relationship="Self.Conveniados_RegistroObto_fk" FromRole="Conveniados" ToRole="RegistroObto" />
+    <NavigationProperty Name="TipoContrato" Relationship="Self.TipoContrato_Conveniados_fk" FromRole="Conveniados" ToRole="TipoContrato" />
+  </EntityType>
+  <EntityType Name="Dependentes">
+    <Key>
+      <PropertyRef Name="Sequencia_dep" />
+      <PropertyRef Name="Sequencia_con" />
+    </Key>
+    <Property Name="Sequencia_dep" Type="Int32" Nullable="false" />
+    <Property Name="Sequencia_con" Type="Int32" Nullable="false" />
+    <Property Name="Descricao_dep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DataObto_dep" Type="DateTime" Precision="3" Nullable="true" />
+    <Property Name="DataNasc_dep" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Codigo_par" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Conveniados" Relationship="Self.Conveniados_Dependentes_fk" FromRole="Dependentes" ToRole="Conveniados" />
+    <NavigationProperty Name="TipoParentesco" Relationship="Self.TipoParentesco_Dependentes_fk" FromRole="Dependentes" ToRole="TipoParentesco" />
+  </EntityType>
+  <EntityType Name="Finaceiro">
+    <Key>
+      <PropertyRef Name="Sequencia_fin" />
+      <PropertyRef Name="NumeroParcela_fin" />
+    </Key>
+    <Property Name="Sequencia_fin" Type="Int32" Nullable="false" />
+    <Property Name="NumeroParcela_fin" Type="Int32" Nullable="false" />
+    <Property Name="Sequencia_con" Type="Int32" Nullable="false" />
+    <Property Name="DataVencimento_fin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataPagamento_fin" Type="DateTime" Precision="3" />
+    <Property Name="ValorDebito_fin" Type="Int32" Nullable="false" />
+    <Property Name="ValorPago_fin" Type="Int32" />
+    <NavigationProperty Name="Conveniados" Relationship="Self.Conveniados_Finaceiro_fk" FromRole="Finaceiro" ToRole="Conveniados" />
+  </EntityType>
+  <EntityType Name="RegistroObto">
+    <Key>
+      <PropertyRef Name="Sequencia_obt" />
+    </Key>
+    <Property Name="Sequencia_obt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sequencia_con" Type="Int32" Nullable="false" />
+    <Property Name="DataObto_obt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LocalObtio_obt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sequencia_cid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="Self.Cidade_RegistroObto_fk" FromRole="RegistroObto" ToRole="Cidade" />
+    <NavigationProperty Name="Conveniados" Relationship="Self.Conveniados_RegistroObto_fk" FromRole="RegistroObto" ToRole="Conveniados" />
+  </EntityType>
+  <EntityType Name="TabEstado">
+    <Key>
+      <PropertyRef Name="CodigoUf_unf" />
+    </Key>
+    <Property Name="CodigoUf_unf" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoUf_unf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="Self.TabEstado_Cidade_fk" FromRole="TabEstado" ToRole="Cidade" />
+  </EntityType>
+  <EntityType Name="TabIbge">
+    <Key>
+      <PropertyRef Name="CodigoIbge_ibg" />
+    </Key>
+    <Property Name="CodigoIbge_ibg" Type="Int32" Nullable="false" />
+    <Property Name="DescricaoIbge_ibg" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cidade" Relationship="Self.TabIbge_Cidade_fk" FromRole="TabIbge" ToRole="Cidade" />
+  </EntityType>
+  <EntityType Name="TipoContrato">
+    <Key>
+      <PropertyRef Name="Codigo_tco" />
+    </Key>
+    <Property Name="Codigo_tco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao_tco" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ValorContrato_tco" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Conveniados" Relationship="Self.TipoContrato_Conveniados_fk" FromRole="TipoContrato" ToRole="Conveniados" />
+  </EntityType>
+  <EntityType Name="TipoParentesco">
+    <Key>
+      <PropertyRef Name="Codigo_par" />
+    </Key>
+    <Property Name="Codigo_par" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao_par" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Dependentes" Relationship="Self.TipoParentesco_Dependentes_fk" FromRole="TipoParentesco" ToRole="Dependentes" />
+  </EntityType>
+  <Association Name="Cidade_Conveniados_fk">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="Conveniados" Type="Self.Conveniados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="Sequencia_cid" />
+      </Principal>
+      <Dependent Role="Conveniados">
+        <PropertyRef Name="Sequencia_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cidade_RegistroObto_fk">
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+    <End Role="RegistroObto" Type="Self.RegistroObto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cidade">
+        <PropertyRef Name="Sequencia_cid" />
+      </Principal>
+      <Dependent Role="RegistroObto">
+        <PropertyRef Name="Sequencia_cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TabEstado_Cidade_fk">
+    <End Role="TabEstado" Type="Self.TabEstado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabEstado">
+        <PropertyRef Name="CodigoUf_unf" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="CodigoUf_unf" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TabIbge_Cidade_fk">
+    <End Role="TabIbge" Type="Self.TabIbge" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TabIbge">
+        <PropertyRef Name="CodigoIbge_ibg" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="CodigoIbge_ibg" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Conveniados_Dependentes_fk">
+    <End Role="Conveniados" Type="Self.Conveniados" Multiplicity="1" />
+    <End Role="Dependentes" Type="Self.Dependentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conveniados">
+        <PropertyRef Name="Sequencia_con" />
+      </Principal>
+      <Dependent Role="Dependentes">
+        <PropertyRef Name="Sequencia_con" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Conveniados_Finaceiro_fk">
+    <End Role="Conveniados" Type="Self.Conveniados" Multiplicity="1" />
+    <End Role="Finaceiro" Type="Self.Finaceiro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conveniados">
+        <PropertyRef Name="Sequencia_con" />
+      </Principal>
+      <Dependent Role="Finaceiro">
+        <PropertyRef Name="Sequencia_con" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Conveniados_RegistroObto_fk">
+    <End Role="Conveniados" Type="Self.Conveniados" Multiplicity="1" />
+    <End Role="RegistroObto" Type="Self.RegistroObto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conveniados">
+        <PropertyRef Name="Sequencia_con" />
+      </Principal>
+      <Dependent Role="RegistroObto">
+        <PropertyRef Name="Sequencia_con" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoContrato_Conveniados_fk">
+    <End Role="TipoContrato" Type="Self.TipoContrato" Multiplicity="1" />
+    <End Role="Conveniados" Type="Self.Conveniados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoContrato">
+        <PropertyRef Name="Codigo_tco" />
+      </Principal>
+      <Dependent Role="Conveniados">
+        <PropertyRef Name="Codigo_tco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoParentesco_Dependentes_fk">
+    <End Role="TipoParentesco" Type="Self.TipoParentesco" Multiplicity="1" />
+    <End Role="Dependentes" Type="Self.Dependentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoParentesco">
+        <PropertyRef Name="Codigo_par" />
+      </Principal>
+      <Dependent Role="Dependentes">
+        <PropertyRef Name="Codigo_par" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FunerariaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" />
+    <EntitySet Name="Conveniados" EntityType="Self.Conveniados" />
+    <EntitySet Name="Dependentes" EntityType="Self.Dependentes" />
+    <EntitySet Name="Finaceiro" EntityType="Self.Finaceiro" />
+    <EntitySet Name="RegistroObto" EntityType="Self.RegistroObto" />
+    <EntitySet Name="TabEstado" EntityType="Self.TabEstado" />
+    <EntitySet Name="TabIbge" EntityType="Self.TabIbge" />
+    <EntitySet Name="TipoContrato" EntityType="Self.TipoContrato" />
+    <EntitySet Name="TipoParentesco" EntityType="Self.TipoParentesco" />
+    <AssociationSet Name="Cidade_Conveniados_fk" Association="Self.Cidade_Conveniados_fk">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="Conveniados" EntitySet="Conveniados" />
+    </AssociationSet>
+    <AssociationSet Name="Cidade_RegistroObto_fk" Association="Self.Cidade_RegistroObto_fk">
+      <End Role="Cidade" EntitySet="Cidade" />
+      <End Role="RegistroObto" EntitySet="RegistroObto" />
+    </AssociationSet>
+    <AssociationSet Name="TabEstado_Cidade_fk" Association="Self.TabEstado_Cidade_fk">
+      <End Role="TabEstado" EntitySet="TabEstado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="TabIbge_Cidade_fk" Association="Self.TabIbge_Cidade_fk">
+      <End Role="TabIbge" EntitySet="TabIbge" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="Conveniados_Dependentes_fk" Association="Self.Conveniados_Dependentes_fk">
+      <End Role="Conveniados" EntitySet="Conveniados" />
+      <End Role="Dependentes" EntitySet="Dependentes" />
+    </AssociationSet>
+    <AssociationSet Name="Conveniados_Finaceiro_fk" Association="Self.Conveniados_Finaceiro_fk">
+      <End Role="Conveniados" EntitySet="Conveniados" />
+      <End Role="Finaceiro" EntitySet="Finaceiro" />
+    </AssociationSet>
+    <AssociationSet Name="Conveniados_RegistroObto_fk" Association="Self.Conveniados_RegistroObto_fk">
+      <End Role="Conveniados" EntitySet="Conveniados" />
+      <End Role="RegistroObto" EntitySet="RegistroObto" />
+    </AssociationSet>
+    <AssociationSet Name="TipoContrato_Conveniados_fk" Association="Self.TipoContrato_Conveniados_fk">
+      <End Role="TipoContrato" EntitySet="TipoContrato" />
+      <End Role="Conveniados" EntitySet="Conveniados" />
+    </AssociationSet>
+    <AssociationSet Name="TipoParentesco_Dependentes_fk" Association="Self.TipoParentesco_Dependentes_fk">
+      <End Role="TipoParentesco" EntitySet="TipoParentesco" />
+      <End Role="Dependentes" EntitySet="Dependentes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

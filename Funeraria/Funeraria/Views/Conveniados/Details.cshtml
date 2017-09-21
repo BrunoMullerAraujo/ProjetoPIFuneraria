@@ -1,0 +1,90 @@
+﻿@model Funeraria.Conveniados
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Conveniados</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNasc_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNasc_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataObto_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataObto_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo_con)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo_con)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade.Descricao_cid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade.Descricao_cid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoContrato.Descricao_tco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoContrato.Descricao_tco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Sequencia_con }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

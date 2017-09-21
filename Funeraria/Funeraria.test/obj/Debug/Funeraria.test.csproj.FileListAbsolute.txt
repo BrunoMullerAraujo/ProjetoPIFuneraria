@@ -1,0 +1,17 @@
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\pt\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\pt\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\pt\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Funeraria.test.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Funeraria.test.pdb
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\WebDriver.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\bin\Debug\WebDriver.xml
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\obj\Debug\Funeraria.test.csproj.CoreCompileInputs.cache
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\obj\Debug\Funeraria.test.dll
+C:\Users\bwkbr\Source\Repos\Funeraria\Funeraria\Funeraria.test\obj\Debug\Funeraria.test.pdb

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Funeraria.Conveniados>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNasc_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataObto_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo_con)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.Descricao_cid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoContrato.Descricao_tco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Numero_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNasc_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataObto_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo_con)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade.Descricao_cid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoContrato.Descricao_tco)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Sequencia_con }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Sequencia_con }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Sequencia_con })
+        </td>
+    </tr>
+}
+
+</table>
